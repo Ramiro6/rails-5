@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  get 'access/menu'
-
-  get 'access/login'
-
   root 'demo#index'
 
+  get 'admin', to: 'access#menu'
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attemp_login'
+  get 'access/logout'
+
   resources :sections do
-    member do 
+    member do
       get :delete
     end
   end

@@ -1,2 +1,11 @@
-<h1>Access#menu</h1>
-<p>Find me in app/views/access/menu.html.erb</p>
+<%= @page_title = "Admin Menu" %>
+
+<div class="menu">
+    <h2>Admin Menu</h2>
+    <div class="identity">Logged in as:</div>
+    <ul>
+        <li><%= link_to "Manage Subject", subjects_path %></li>
+        <li><%= link_to "Manage page", pages_path %></li>
+        <li><%= link_to "Logout", access_logout_path %></li>
+    </ul>
+</div>
