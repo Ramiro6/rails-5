@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  # before_action :find_subjects only: [:new, :create, :edit, :update]
+  # before_action :set_page_count only: [:edit]
+
   def index
     @pages = Page.sorted
     @pages = Page.sorted
@@ -51,5 +54,13 @@ class PagesController < ApplicationController
   private
   def page_params
     params.require(:page).permit(:subject_id, :name, :position, :visible, :permalink)
+  end
+
+  def find_subjects
+    # @subjects = Subject.sorted
+  end
+
+  def set_page_count
+    
   end
 end
